@@ -9,6 +9,8 @@
     text-decoration: none;
     opacity: 0;
     transition: opacity 1s, border 0.4s, background 0.3s;
+    -webkit-transition: opacity 1s, border 0.4s, background 0.3s;
+    -moz-transition: opacity 1s, border 0.4s, background 0.3s;
 }
 
 .button:hover {
@@ -24,6 +26,8 @@
     visibility: hidden;
     position: fixed;
     transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
     width: 100%;
     z-index: 99;
 }
@@ -50,6 +54,8 @@
     white-space: nowrap;
     margin: 0 auto;
     animation: typing 2s steps(30, end), caret 0.7s steps(1) infinite;
+    -webkit-animation: typing 2s steps(30, end), caret 0.7s steps(1) infinite;
+    -moz-animation: typing 2s steps(30, end), caret 0.7s steps(1) infinite;
 }
 
 @keyframes typing {
