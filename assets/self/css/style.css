@@ -1,0 +1,68 @@
+.button {
+    font-size: 2.3vw;
+    font-family: 'PT Sans', sans-serif;
+    border: 2px gray solid;
+    border-radius: 10px;
+    background-color: transparent;
+    color: dimgray;
+    padding: 5px 15px;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 1s, border 0.4s, background 0.3s;
+}
+
+.button:hover {
+    border: 2px darkorange solid;
+    color: white;
+    text-decoration: none;
+    background-color: darkorange;
+}
+
+#topbar {
+    background-color: rgba(18, 7, 3, 0.85);
+    background-size: opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    transition: opacity 0.5s;
+    width: 100%;
+    z-index: 99;
+}
+
+#topbar .title {
+    font-family: 'Lobster', cursive;
+    color: white;
+}
+
+#title {
+    height: 900px;
+    background-image: url(../img/top.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.typewriter h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10vw;
+    color: #222;
+    overflow: hidden;
+    border-right: .12em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 2s steps(30, end), caret 0.7s steps(1) infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Progressive Web App menifest -->
+    <link rel="manifest" href="#">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>It's ME! - KorKiak</title>
+    <!-- for chrome mobile -->
+    <meta name="theme-color" content="#222">
+    <link rel="icon" sizes="192x192" href="#">
+    <link rel="apple-touch-icon" href="#">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/self/css/style.css">
+    <!-- Google Font -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto+Mono|PT+Sans" rel="stylesheet">
+    <!-- ScrollReveal JS -->
+    <script src="assets/lib/js/scrollreveal.min.js"></script>
+    <script>
+        window.sr = ScrollReveal();
+        // Add class to <html> if ScrollReveal is supported
+        // Note: this method is deprecated, and only works in version 3
+        if (sr.isSupported()) {
+            document.documentElement.classList.add('sr');
+        }
+
+    </script>
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <script>
+        window.onscroll = function() {
+            topAppear()
+        };
+
+    </script>
+    <script>
+        setTimeout(function() {
+            document.getElementById("firstbutton").style.opacity = "1";
+        }, 2100);
+
+    </script>
+    <section id="topbar">
+        <div class="container-fluid title-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="title">KorKiak</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12" style="padding: 0;">
+                <div id="title">
+                    <center>
+                        <div style="height: 100px;">
+                        </div>
+                        <div class="typewriter" style="padding: 0% 10%; margin-bottom: 25px;">
+                            <h1>Hello World!</h1>
+                        </div>
+                        <a id="firstbutton" class="button" href="#info">Let's get started</a>
+                    </center>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div style="height: 1000px; width: 100%;">
+                        <p id="info">
+                            <h1>Hi</h1>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- JS -->
+    <script src="assets/lib/js/smooth-scroll.polyfills.min.js"></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]:not([data-easing])');
+        var easeInOutCubic = new SmoothScroll('[data-easing="easeInOutCubic"]', {
+            easing: 'easeInOutCubic',
+            speed: 1500
+        });
+
+    </script>
+    <script>
+        function topAppear() {
+            if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+                document.getElementById("topbar").style.opacity = "1";
+                document.getElementById("topbar").style.visibility = "visible";
+            } else if (document.body.scrollTop < 600 || document.documentElement.scrollTop < 600) {
+                document.getElementById("topbar").style.opacity = "0";
+            }
+        }
+
+    </script>
+    <!-- scrollReveal JS -->
+    <script>
+        window.sr = ScrollReveal();
+        // use rotation in reveal configuration
+        sr.reveal(document.getElementById("helloworld   "));
+
+    </script>
+    <!-- jQuery and Tether first, then Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="assets/lib/js/bootstrap.min.js"></script>
+</body>
+
+</html>
