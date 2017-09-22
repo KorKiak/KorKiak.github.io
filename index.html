@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Progressive Web App menifest -->
-    <link rel="manifest" href="#">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,8 +9,7 @@
     <title>It's ME! - KorKiak</title>
     <!-- for chrome mobile -->
     <meta name="theme-color" content="#222">
-    <link rel="icon" sizes="192x192" href="#">
-    <link rel="apple-touch-icon" href="#">
+    <link rel="icon" sizes="192x192" href="assets/self/img/favicon.ico">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
     <!-- Style CSS -->
@@ -24,8 +21,6 @@
     <script src="assets/lib/js/scrollreveal.min.js"></script>
     <script>
         window.sr = ScrollReveal();
-        // Add class to <html> if ScrollReveal is supported
-        // Note: this method is deprecated, and only works in version 3
         if (sr.isSupported()) {
             document.documentElement.classList.add('sr');
         }
@@ -33,12 +28,20 @@
     </script>
 
     <style>
-
+        body {
+            overflow-x: hidden;
+        }
+        
+        #info {
+            background-color: #e8ecfb;
+            padding-top: 100px;
+        }
 
     </style>
 </head>
 
 <body>
+    <!-- JS -->
     <script>
         window.onscroll = function() {
             topAppear()
@@ -51,16 +54,18 @@
         }, 2100);
 
     </script>
+    <!-- Top navbar -->
     <section id="topbar">
         <div class="container-fluid title-container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="title">KorKiak</h1>
+                    <h3 class="title" style="margin-top: .5rem;">KorKiak</h1>
                 </div>
             </div>
         </div>
     </section>
-    <div class="container-fluid">
+    <!-- top image -->
+    <div id="topsection" class="container-fluid">
         <div class="row">
             <div class="col-lg-12" style="padding: 0;">
                 <div id="title">
@@ -77,18 +82,46 @@
             </div>
         </div>
     </div>
-    <section>
+    <!-- information -->
+    <section id="info">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div style="height: 1000px; width: 100%;">
-                        <p id="info">
-                            <h1>Hi</h1>
-                        </p>
+            <div class="row" style="transform: translateX(-70px);">
+                <div class="col-lg-4" data-paroller-type="foreground" data-paroller-factor="0.3" data-paroller-direction="horizontal">
+                    <div class="card" style="width: 100%;">
+                        <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">This is a mug</h4>
+                            <p class="card-text">Test of paroller.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-paroller-type="foreground" data-paroller-factor="0.3" data-paroller-direction="horizontal">
+                    <div class="card" style="width: 100%;">
+                        <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">This is a mug</h4>
+                            <p class="card-text">Test of paroller.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-paroller-type="foreground" data-paroller-factor="0.3" data-paroller-direction="horizontal">
+                    <div class="card" style="width: 100%;">
+                        <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">This is a mug</h4>
+                            <p class="card-text">Test of paroller.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row" style="height: 1000px;">
+                <div class="col-lg-4 col-offset-4">
+                </div>
+            </div>
+        </div>
+
     </section>
 
 
@@ -118,13 +151,20 @@
     <script>
         window.sr = ScrollReveal();
         // use rotation in reveal configuration
-        sr.reveal(document.getElementById("helloworld   "));
+        sr.reveal(document.getElementById("helloworld"));
 
     </script>
     <!-- jQuery and Tether first, then Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="assets/lib/js/bootstrap.min.js"></script>
+    <script src="assets/lib/js/jquery.paroller.min.js"></script>
+    <script>
+        $(function() {
+            $(window).paroller();
+        })
+
+    </script>
 </body>
 
 </html>

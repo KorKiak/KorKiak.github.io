@@ -72,3 +72,9 @@
         border-color: transparent;
     }
 }
+
+#topsection {
+    box-shadow: 0px 5px 15px #222;
+    -webkit-box-shadow: 0px 5px 15px #222;
+    -moz-box-shadow: 0px 5px 15px #222;
+}
