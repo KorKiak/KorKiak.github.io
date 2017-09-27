@@ -24,35 +24,31 @@
         if (sr.isSupported()) {
             document.documentElement.classList.add('sr');
         }
-
     </script>
 
     <style>
         body {
             overflow-x: hidden;
         }
-        
+
         #info {
             background-color: #e8ecfb;
             padding-top: 100px;
         }
-
     </style>
 </head>
 
 <body>
     <!-- JS -->
     <script>
-        window.onscroll = function() {
+        window.onscroll = function () {
             topAppear()
         };
-
     </script>
     <script>
-        setTimeout(function() {
+        setTimeout(function () {
             document.getElementById("firstbutton").style.opacity = "1";
         }, 2100);
-
     </script>
     <!-- Top navbar -->
     <section id="topbar">
@@ -72,21 +68,22 @@
                     <center>
                         <div style="height: 100px;">
                         </div>
-                        <div class="typewriter" style="padding: 0% 10%; margin-bottom: 25px;">
+                        <div class="typewriter" style="padding: 0% 10%; margin-bottom: 25px;" data-paroller-factor="-0.15" data-paroller-type="foreground">
                             <h1>Hello World!</h1>
                         </div>
-                        <a id="firstbutton" class="button" href="#info">Let's get started</a>
+                        <div data-paroller-factor="-0.15" data-paroller-type="foreground">
+                            <a id="firstbutton" class="button" href="#info">Let's get started</a>
+                        </div>
                     </center>
                 </div>
-
             </div>
         </div>
     </div>
     <!-- information -->
-    <section id="info">
+    <section id="info" data-paroller-factor="0.5">
         <div class="container-fluid">
-            <div class="row" style="transform: translateX(-70px);">
-                <div class="col-lg-4" data-paroller-type="foreground" data-paroller-factor="0.3" data-paroller-direction="horizontal">
+            <div class="row">
+                <div class="col-lg-4">
                     <div class="card" style="width: 100%;">
                         <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
                         <div class="card-block">
@@ -95,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" data-paroller-type="foreground" data-paroller-factor="0.3" data-paroller-direction="horizontal">
+                <div class="col-lg-4">
                     <div class="card" style="width: 100%;">
                         <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
                         <div class="card-block">
@@ -104,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" data-paroller-type="foreground" data-paroller-factor="0.3" data-paroller-direction="horizontal">
+                <div class="col-lg-4">
                     <div class="card" style="width: 100%;">
                         <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
                         <div class="card-block">
@@ -112,12 +109,6 @@
                             <p class="card-text">Test of paroller.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row" style="height: 1000px;">
-                <div class="col-lg-4 col-offset-4">
                 </div>
             </div>
         </div>
@@ -134,7 +125,6 @@
             easing: 'easeInOutCubic',
             speed: 1500
         });
-
     </script>
     <script>
         function topAppear() {
@@ -145,25 +135,31 @@
                 document.getElementById("topbar").style.opacity = "0";
             }
         }
-
     </script>
     <!-- scrollReveal JS -->
     <script>
         window.sr = ScrollReveal();
         // use rotation in reveal configuration
-        sr.reveal(document.getElementById("helloworld"));
-
+        sr.reveal(".card", {
+            reset: true,
+            rotate: {
+                x: 20,
+                y: 20,
+                Z: 0
+            }
+        }, 100);
     </script>
     <!-- jQuery and Tether first, then Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
     <script src="assets/lib/js/bootstrap.min.js"></script>
     <script src="assets/lib/js/jquery.paroller.min.js"></script>
     <script>
-        $(function() {
+        $(function () {
             $(window).paroller();
         })
-
     </script>
 </body>
 

@@ -74,7 +74,11 @@
 }
 
 #topsection {
-    box-shadow: 0px 5px 15px #222;
-    -webkit-box-shadow: 0px 5px 15px #222;
-    -moz-box-shadow: 0px 5px 15px #222;
+}
+
+
+#info{
+    background-image: url(../img/book.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
