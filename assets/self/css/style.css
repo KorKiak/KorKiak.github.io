@@ -21,13 +21,13 @@
 }
 
 #topbar {
-    background-color: rgba(18, 7, 3, 0.85);
-    background-size: opacity: 0;
+    background-color: rgba(18, 7, 3, 0.90);
+    opacity: 0;
     visibility: hidden;
     position: fixed;
-    transition: opacity 0.5s;
-    -webkit-transition: opacity 0.5s;
-    -moz-transition: opacity 0.5s;
+    transition: opacity 0.4s;
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
     width: 100%;
     z-index: 99;
 }
@@ -53,9 +53,9 @@
     border-right: .12em solid orange;
     white-space: nowrap;
     margin: 0 auto;
-    animation: typing 2s steps(30, end), caret 0.7s steps(1) infinite;
-    -webkit-animation: typing 2s steps(30, end), caret 0.7s steps(1) infinite;
-    -moz-animation: typing 2s steps(30, end), caret 0.7s steps(1) infinite;
+    animation: typing 2s steps(27, end), caret 0.7s steps(1) infinite;
+    -webkit-animation: typing 2s steps(27, end), caret 0.7s steps(1) infinite;
+    -moz-animation: typing 2s steps(27, end), caret 0.7s steps(1) infinite;
 }
 
 @keyframes typing {
@@ -78,7 +78,7 @@
 
 
 #info{
-    background-image: url(../img/book.jpg);
+    /* background-image: url(../img/book.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
 }

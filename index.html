@@ -80,10 +80,10 @@
         </div>
     </div>
     <!-- information -->
-    <section id="info" data-paroller-factor="0.5">
+    <section id="info" data-paroller-factor="0.5" style="padding-bottom: 200px;">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4">
+            <div class="row"style="width: 80%; margin: 20px auto;">
+                <div class="col-lg-3">
                     <div class="card" style="width: 100%;">
                         <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
                         <div class="card-block">
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="card" style="width: 100%;">
                         <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
                         <div class="card-block">
@@ -101,7 +101,54 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
+                    <div class="card" style="width: 100%;">
+                        <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">This is a mug</h4>
+                            <p class="card-text">Test of paroller.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 100%;">
+                        <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">This is a mug</h4>
+                            <p class="card-text">Test of paroller.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"style="width: 80%; margin: 20px auto;">
+                <div class="col-lg-3">
+                    <div class="card" style="width: 100%;">
+                        <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">This is a mug</h4>
+                            <p class="card-text">Test of paroller.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 100%;">
+                        <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">This is a mug</h4>
+                            <p class="card-text">Test of paroller.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 100%;">
+                        <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">This is a mug</h4>
+                            <p class="card-text">Test of paroller.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
                     <div class="card" style="width: 100%;">
                         <img class="card-img-top" src="assets/self/img/mug.jpg" alt="Card image cap">
                         <div class="card-block">
@@ -123,17 +170,20 @@
         var scroll = new SmoothScroll('a[href*="#"]:not([data-easing])');
         var easeInOutCubic = new SmoothScroll('[data-easing="easeInOutCubic"]', {
             easing: 'easeInOutCubic',
-            speed: 1500
+            speed: 100
         });
     </script>
     <script>
         function topAppear() {
-            if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
-                document.getElementById("topbar").style.opacity = "1";
-                document.getElementById("topbar").style.visibility = "visible";
-            } else if (document.body.scrollTop < 600 || document.documentElement.scrollTop < 600) {
-                document.getElementById("topbar").style.opacity = "0";
-            }
+            setTimeout(function () {
+                if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+                    document.getElementById("topbar").style.opacity = "1";
+                    document.getElementById("topbar").style.visibility = "visible";
+                } else if (document.body.scrollTop < 600 || document.documentElement.scrollTop < 600) {
+                    document.getElementById("topbar").style.opacity = "0";
+                }
+            }, 500);
+
         }
     </script>
     <!-- scrollReveal JS -->
@@ -146,7 +196,8 @@
                 x: 20,
                 y: 20,
                 Z: 0
-            }
+            },
+            delay: 200
         }, 100);
     </script>
     <!-- jQuery and Tether first, then Bootstrap -->
