@@ -58,6 +58,29 @@
     -moz-animation: typing 2s steps(27, end), caret 0.7s steps(1) infinite;
 }
 
+.card {
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 3%;
+    transition: .2s;
+    padding: 0px 15px;
+}
+
+.card:hover {
+    box-shadow: #aaaabb 0px 0px 8px;
+}
+
+.card h4 {
+    font-size: 1.25em;
+}
+
+.card-img-top {
+    padding: 20px 0px;
+    width: 100%;
+    height: auto;
+}
+
 @keyframes typing {
     from {
         width: 0
