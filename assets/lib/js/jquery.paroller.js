@@ -13,7 +13,7 @@
             return elem.css({'background-position': 'center ' + -bgOffset + 'px'});
         },
         bgHorizontal: function (elem, bgOffset) {
-            return elem.css({'background-position': -bgOffset + 'px' + ' center'});
+            return elem.css({'background-position': -bgOffset-800 + 'px' + ' center'});
         },
         vertical: function (elem, elemOffset) {
             return elem.css({
