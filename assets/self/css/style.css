@@ -104,10 +104,10 @@
     background-image: url('../img/educations/edu-bg.png');
     background-repeat: no-repeat;
     background-position: right;
-    background-size: 200%;
+    background-size: auto 200%;
     background-attachment: fixed;
 }
 
 #showcase {
-    
+
 }
