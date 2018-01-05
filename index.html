@@ -209,10 +209,11 @@
     </section>
     <!-- showcase -->
     <section id="showcase" data-paroller-factor="0.5">
-        <div class="container-fluid">
+        <div class="container-fluid" style="font-family: 'Comfortaa', cursive; padding: 0px 0px 100px 0px;">
             <div class="row">
-                <div>
-
+                <div class="col" style="text-align: center;">
+                    <h1>.<br>.<br></h1>
+                    <h1>To be continued.</h1>
                 </div>
             </div>
         </div>
@@ -245,6 +246,12 @@
     <!-- scrollReveal JS -->
     <script>
         window.sr = ScrollReveal();
+        //for fun
+        sr.reveal("#showcase", {
+            reset: false,
+            viewFactor: 0.8,
+            delay: 500
+        }, 100);
         // use rotation in reveal configuration
         sr.reveal(".card", {
             reset: false,
@@ -335,5 +342,8 @@
         })
     </script>
 </body>
+<footer style="background-color: hsla(190,100%,5%,0.6); height: 25px; color: white; text-align: center; font-family: 'Roboto Mono', monospace;">
+        (C)Copyright 2018, Tanit K. All Rights Reserved.
+</footer>
 
 </html>
