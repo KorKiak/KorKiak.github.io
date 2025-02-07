@@ -65,48 +65,73 @@
         Clothing
     </div>
     <ul>
-        <li><input type="checkbox"> Short-sleeve shirts</li>
-        <li><input type="checkbox"> Long-sleeve shirts</li>
-        <li><input type="checkbox"> Lightweight jacket</li>
-        <li><input type="checkbox"> Heavy jacket</li>
-        <li><input type="checkbox"> Pants / Jeans</li>
-        <li><input type="checkbox"> Shorts / Skirts</li>
-        <li><input type="checkbox"> Underwear</li>
-        <li><input type="checkbox"> Socks</li>
-        <li><input type="checkbox"> Pajamas</li>
-        <li><input type="checkbox"> Swimsuit</li>
+        <li><input type="checkbox" class="check-item"> Short-sleeve shirts</li>
+        <li><input type="checkbox" class="check-item"> Long-sleeve shirts</li>
+        <li><input type="checkbox" class="check-item"> Lightweight jacket</li>
+        <li><input type="checkbox" class="check-item"> Heavy jacket</li>
+        <li><input type="checkbox" class="check-item"> Pants / Jeans</li>
+        <li><input type="checkbox" class="check-item"> Shorts / Skirts</li>
+        <li><input type="checkbox" class="check-item"> Underwear</li>
+        <li><input type="checkbox" class="check-item"> Socks</li>
+        <li><input type="checkbox" class="check-item"> Pajamas</li>
+        <li><input type="checkbox" class="check-item"> Swimsuit</li>
     </ul>
 
     <div class="category">
         Accessories
     </div>
     <ul>
-        <li><input type="checkbox"> Sunglasses</li>
-        <li><input type="checkbox"> Watch</li>
-        <li><input type="checkbox"> Belt</li>
-        <li><input type="checkbox"> Scarf</li>
-        <li><input type="checkbox"> Umbrella</li>
+        <li><input type="checkbox" class="check-item"> Sunglasses</li>
+        <li><input type="checkbox" class="check-item"> Watch</li>
+        <li><input type="checkbox" class="check-item"> Belt</li>
+        <li><input type="checkbox" class="check-item"> Scarf</li>
+        <li><input type="checkbox" class="check-item"> Umbrella</li>
     </ul>
 
     <div class="category">
         Documents & Money
     </div>
     <ul>
-        <li><input type="checkbox"> Passport</li>
-        <li><input type="checkbox"> Visa</li>
-        <li><input type="checkbox"> Flight tickets</li>
-        <li><input type="checkbox"> Credit / Debit cards</li>
-        <li><input type="checkbox"> Local currency</li>
+        <li><input type="checkbox" class="check-item"> Passport</li>
+        <li><input type="checkbox" class="check-item"> Visa</li>
+        <li><input type="checkbox" class="check-item"> Flight tickets</li>
+        <li><input type="checkbox" class="check-item"> Credit / Debit cards</li>
+        <li><input type="checkbox" class="check-item"> Local currency</li>
     </ul>
 
-    <button onclick="saveChecklist()">Save Checklist</button>
+    <button onclick="saveChecklist()">Download Checklist</button>
     <input type="file" id="importFile" accept=".json" onchange="importChecklist(event)">
     <button onclick="clearChecklist()">Reset Checklist</button>
 
     <script>
-        // Function to save checklist to JSON file
+        // Function to auto-save checklist to local storage
+        function autoSaveChecklist() {
+            let checkboxes = document.querySelectorAll('.check-item');
+            let checklistState = {};
+
+            checkboxes.forEach((checkbox, index) => {
+                checklistState[index] = checkbox.checked;
+            });
+
+            localStorage.setItem("travelChecklist", JSON.stringify(checklistState));
+        }
+
+        // Load checklist from local storage
+        function loadChecklist() {
+            let checklistState = localStorage.getItem("travelChecklist");
+            if (!checklistState) return;
+
+            checklistState = JSON.parse(checklistState);
+            let checkboxes = document.querySelectorAll('.check-item');
+
+            checkboxes.forEach((checkbox, index) => {
+                checkbox.checked = checklistState[index] || false;
+            });
+        }
+
+        // Function to save checklist to a downloadable JSON file
         function saveChecklist() {
-            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let checkboxes = document.querySelectorAll('.check-item');
             let checklistState = {};
 
             checkboxes.forEach((checkbox, index) => {
@@ -136,21 +161,34 @@
                 let jsonData = e.target.result;
                 let checklistState = JSON.parse(jsonData);
 
-                let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                let checkboxes = document.querySelectorAll('.check-item');
                 checkboxes.forEach((checkbox, index) => {
                     checkbox.checked = checklistState[index] || false;
                 });
+
+                localStorage.setItem("travelChecklist", JSON.stringify(checklistState));
             };
             reader.readAsText(file);
         }
 
         // Function to clear checklist
         function clearChecklist() {
-            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let checkboxes = document.querySelectorAll('.check-item');
             checkboxes.forEach((checkbox) => {
                 checkbox.checked = false;
             });
+
+            localStorage.removeItem("travelChecklist");
         }
+
+        // Add event listeners to checkboxes for auto-saving
+        document.addEventListener("DOMContentLoaded", () => {
+            loadChecklist(); // Load saved state on page load
+            let checkboxes = document.querySelectorAll('.check-item');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", autoSaveChecklist);
+            });
+        });
     </script>
 
 </body>
