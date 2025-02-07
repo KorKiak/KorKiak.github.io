@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Checklist</title>
+    <title>Complete Travel Checklist</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -59,7 +59,7 @@
 </head>
 <body>
 
-    <h2>Travel Checklist</h2>
+    <h2>Complete Travel Checklist</h2>
 
     <div class="category">
         Clothing
@@ -75,6 +75,7 @@
         <li><input type="checkbox" class="check-item"> Socks</li>
         <li><input type="checkbox" class="check-item"> Pajamas</li>
         <li><input type="checkbox" class="check-item"> Swimsuit</li>
+        <li><input type="checkbox" class="check-item"> Hat / Cap</li>
     </ul>
 
     <div class="category">
@@ -86,6 +87,35 @@
         <li><input type="checkbox" class="check-item"> Belt</li>
         <li><input type="checkbox" class="check-item"> Scarf</li>
         <li><input type="checkbox" class="check-item"> Umbrella</li>
+        <li><input type="checkbox" class="check-item"> Gloves</li>
+        <li><input type="checkbox" class="check-item"> Small Bag / Backpack</li>
+        <li><input type="checkbox" class="check-item"> Power Bank</li>
+    </ul>
+
+    <div class="category">
+        Toiletries
+    </div>
+    <ul>
+        <li><input type="checkbox" class="check-item"> Toothbrush & Toothpaste</li>
+        <li><input type="checkbox" class="check-item"> Shampoo & Conditioner</li>
+        <li><input type="checkbox" class="check-item"> Soap / Body Wash</li>
+        <li><input type="checkbox" class="check-item"> Razor & Shaving Cream</li>
+        <li><input type="checkbox" class="check-item"> Deodorant</li>
+        <li><input type="checkbox" class="check-item"> Hairbrush / Comb</li>
+        <li><input type="checkbox" class="check-item"> Sunscreen</li>
+        <li><input type="checkbox" class="check-item"> Lip Balm</li>
+        <li><input type="checkbox" class="check-item"> Feminine Hygiene Products</li>
+    </ul>
+
+    <div class="category">
+        Electronics
+    </div>
+    <ul>
+        <li><input type="checkbox" class="check-item"> Phone & Charger</li>
+        <li><input type="checkbox" class="check-item"> Laptop / Tablet</li>
+        <li><input type="checkbox" class="check-item"> Headphones</li>
+        <li><input type="checkbox" class="check-item"> Travel Adapter</li>
+        <li><input type="checkbox" class="check-item"> Camera & Memory Cards</li>
     </ul>
 
     <div class="category">
@@ -97,6 +127,10 @@
         <li><input type="checkbox" class="check-item"> Flight tickets</li>
         <li><input type="checkbox" class="check-item"> Credit / Debit cards</li>
         <li><input type="checkbox" class="check-item"> Local currency</li>
+        <li><input type="checkbox" class="check-item"> Travel Insurance</li>
+        <li><input type="checkbox" class="check-item"> Emergency Contacts</li>
+        <li><input type="checkbox" class="check-item"> Hotel Reservations</li>
+        <li><input type="checkbox" class="check-item"> Itinerary</li>
     </ul>
 
     <button onclick="saveChecklist()">Download Checklist</button>
@@ -104,7 +138,6 @@
     <button onclick="clearChecklist()">Reset Checklist</button>
 
     <script>
-        // Function to auto-save checklist to local storage
         function autoSaveChecklist() {
             let checkboxes = document.querySelectorAll('.check-item');
             let checklistState = {};
@@ -116,7 +149,6 @@
             localStorage.setItem("travelChecklist", JSON.stringify(checklistState));
         }
 
-        // Load checklist from local storage
         function loadChecklist() {
             let checklistState = localStorage.getItem("travelChecklist");
             if (!checklistState) return;
@@ -129,7 +161,6 @@
             });
         }
 
-        // Function to save checklist to a downloadable JSON file
         function saveChecklist() {
             let checkboxes = document.querySelectorAll('.check-item');
             let checklistState = {};
@@ -151,7 +182,6 @@
             URL.revokeObjectURL(url);
         }
 
-        // Function to import checklist from JSON file
         function importChecklist(event) {
             let file = event.target.files[0];
             if (!file) return;
@@ -171,23 +201,14 @@
             reader.readAsText(file);
         }
 
-        // Function to clear checklist
         function clearChecklist() {
-            let checkboxes = document.querySelectorAll('.check-item');
-            checkboxes.forEach((checkbox) => {
-                checkbox.checked = false;
-            });
-
+            document.querySelectorAll('.check-item').forEach(checkbox => checkbox.checked = false);
             localStorage.removeItem("travelChecklist");
         }
 
-        // Add event listeners to checkboxes for auto-saving
         document.addEventListener("DOMContentLoaded", () => {
-            loadChecklist(); // Load saved state on page load
-            let checkboxes = document.querySelectorAll('.check-item');
-            checkboxes.forEach(checkbox => {
-                checkbox.addEventListener("change", autoSaveChecklist);
-            });
+            loadChecklist();
+            document.querySelectorAll('.check-item').forEach(checkbox => checkbox.addEventListener("change", autoSaveChecklist));
         });
     </script>
 
