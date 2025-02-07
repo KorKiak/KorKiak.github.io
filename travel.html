@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Checklist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            text-align: center;
+        }
+        .category {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button, input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input[type="file"] {
+            background-color: #f8f9fa;
+            color: black;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Travel Checklist</h2>
+
+    <div class="category">
+        Clothing
+    </div>
+    <ul>
+        <li><input type="checkbox"> Short-sleeve shirts</li>
+        <li><input type="checkbox"> Long-sleeve shirts</li>
+        <li><input type="checkbox"> Lightweight jacket</li>
+        <li><input type="checkbox"> Heavy jacket</li>
+        <li><input type="checkbox"> Pants / Jeans</li>
+        <li><input type="checkbox"> Shorts / Skirts</li>
+        <li><input type="checkbox"> Underwear</li>
+        <li><input type="checkbox"> Socks</li>
+        <li><input type="checkbox"> Pajamas</li>
+        <li><input type="checkbox"> Swimsuit</li>
+    </ul>
+
+    <div class="category">
+        Accessories
+    </div>
+    <ul>
+        <li><input type="checkbox"> Sunglasses</li>
+        <li><input type="checkbox"> Watch</li>
+        <li><input type="checkbox"> Belt</li>
+        <li><input type="checkbox"> Scarf</li>
+        <li><input type="checkbox"> Umbrella</li>
+    </ul>
+
+    <div class="category">
+        Documents & Money
+    </div>
+    <ul>
+        <li><input type="checkbox"> Passport</li>
+        <li><input type="checkbox"> Visa</li>
+        <li><input type="checkbox"> Flight tickets</li>
+        <li><input type="checkbox"> Credit / Debit cards</li>
+        <li><input type="checkbox"> Local currency</li>
+    </ul>
+
+    <button onclick="saveChecklist()">Save Checklist</button>
+    <input type="file" id="importFile" accept=".json" onchange="importChecklist(event)">
+    <button onclick="clearChecklist()">Reset Checklist</button>
+
+    <script>
+        // Function to save checklist to JSON file
+        function saveChecklist() {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let checklistState = {};
+
+            checkboxes.forEach((checkbox, index) => {
+                checklistState[index] = checkbox.checked;
+            });
+
+            let jsonData = JSON.stringify(checklistState, null, 2);
+            let blob = new Blob([jsonData], {
+                type: "application/json"
+            });
+            let url = URL.createObjectURL(blob);
+
+            let a = document.createElement("a");
+            a.href = url;
+            a.download = "travel_checklist.json";
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Function to import checklist from JSON file
+        function importChecklist(event) {
+            let file = event.target.files[0];
+            if (!file) return;
+
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                let jsonData = e.target.result;
+                let checklistState = JSON.parse(jsonData);
+
+                let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach((checkbox, index) => {
+                    checkbox.checked = checklistState[index] || false;
+                });
+            };
+            reader.readAsText(file);
+        }
+
+        // Function to clear checklist
+        function clearChecklist() {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = false;
+            });
+        }
+    </script>
+
+</body>
+</html>
