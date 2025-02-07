@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Travel Checklist</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="KorKiak's Travel Checklist." />
+    <title>Travel Checklist - KorKiak</title>
+    <!-- for chrome mobile -->
+    <meta name="theme-color" content="#222" />
+    <link rel="icon" sizes="192x192" href="assets/self/img/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/self/css/style.css" />
+    <!-- Google Font -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link async href="https://fonts.googleapis.com/css?family=Lobster|Roboto+Mono|PT+Sans|Comfortaa" rel="stylesheet" />
     <style>
-        body {
+        #checklistBody {
             font-family: Arial, sans-serif;
             max-width: 700px;
             margin: auto;
+            margin-top: 20px;
             padding: 20px;
             background-color: #f8f9fa;
         }
+
         h2 {
             text-align: center;
         }
+
         .category {
             font-size: 18px;
             font-weight: bold;
@@ -24,22 +39,38 @@
             padding: 5px;
             border-radius: 5px;
         }
+
+        .category-2 {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: hsl(44, 100%, 50%);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             padding: 8px;
             border-bottom: 1px solid #ddd;
         }
+
         input[type="checkbox"] {
             margin-right: 10px;
         }
-        button, input[type="file"] {
+
+        button,
+        input[type="file"] {
             display: block;
-            width: 100%;
+            width: 80%;
             padding: 10px;
-            margin-top: 10px;
+            margin-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
             font-size: 16px;
             background-color: #007bff;
             color: white;
@@ -47,9 +78,11 @@
             cursor: pointer;
             text-align: center;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         input[type="file"] {
             background-color: #f8f9fa;
             color: black;
@@ -57,160 +90,412 @@
         }
     </style>
 </head>
+
 <body>
+    <section id="topbar" style="visibility: visible; opacity: 1; position: sticky; top: 0px">
+        <div class="container-fluid title-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="./index.html" style="text-decoration: none">
+                        <h3 class="title" style="margin-top: 0.5rem">KorKiak</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2>Complete Travel Checklist</h2>
+    <section id="checklistBody">
+        <h2>Travel Checklist</h2>
+        <div class="category">
+            Warm Clothing
+        </div>
+        <ul>
+            <li><input type="checkbox" class="check-item" /> Heavy jacket</li>
+            <li><input type="checkbox" class="check-item" /> Lightweight jacket</li>
+            <li><input type="checkbox" class="check-item" /> Overcoat</li>
+            <li><input type="checkbox" class="check-item" /> Sweater</li>
+            <li><input type="checkbox" class="check-item" /> Cardigan</li>
+            <li><input type="checkbox" class="check-item" /> Heattech</li>
+            <li><input type="checkbox" class="check-item" /> Long John</li>
+            <li><input type="checkbox" class="check-item" /> Scarf</li>
+            <li><input type="checkbox" class="check-item" /> Gloves</li>
+            <li><input type="checkbox" class="check-item" /> Beanie</li>
+        </ul>
 
-    <div class="category">
-        Clothing
-    </div>
-    <ul>
-        <li><input type="checkbox" class="check-item"> Short-sleeve shirts</li>
-        <li><input type="checkbox" class="check-item"> Long-sleeve shirts</li>
-        <li><input type="checkbox" class="check-item"> Lightweight jacket</li>
-        <li><input type="checkbox" class="check-item"> Heavy jacket</li>
-        <li><input type="checkbox" class="check-item"> Pants / Jeans</li>
-        <li><input type="checkbox" class="check-item"> Shorts / Skirts</li>
-        <li><input type="checkbox" class="check-item"> Underwear</li>
-        <li><input type="checkbox" class="check-item"> Socks</li>
-        <li><input type="checkbox" class="check-item"> Pajamas</li>
-        <li><input type="checkbox" class="check-item"> Swimsuit</li>
-        <li><input type="checkbox" class="check-item"> Hat / Cap</li>
-    </ul>
+        <div class="category">
+            Clothing
+        </div>
+        <ul>
+            <li><input type="checkbox" class="check-item" /> Shirts</li>
+            <li><input type="checkbox" class="check-item" /> Dress</li>
+            <li><input type="checkbox" class="check-item" /> T-shirts</li>
+            <li>
+                <input type="checkbox" class="check-item" /> T-shirts (Long sleeve)
+            </li>
+            <li><input type="checkbox" class="check-item" /> Pants</li>
+            <li><input type="checkbox" class="check-item" /> Jeans</li>
+            <li><input type="checkbox" class="check-item" /> Shorts / Skirts</li>
+            <li><input type="checkbox" class="check-item" /> Underwear</li>
+            <li><input type="checkbox" class="check-item" /> Socks</li>
+            <li><input type="checkbox" class="check-item" /> Pajamas</li>
+            <li><input type="checkbox" class="check-item" /> Swimsuit</li>
+            <li><input type="checkbox" class="check-item" /> Towel</li>
+        </ul>
 
-    <div class="category">
-        Accessories
-    </div>
-    <ul>
-        <li><input type="checkbox" class="check-item"> Sunglasses</li>
-        <li><input type="checkbox" class="check-item"> Watch</li>
-        <li><input type="checkbox" class="check-item"> Belt</li>
-        <li><input type="checkbox" class="check-item"> Scarf</li>
-        <li><input type="checkbox" class="check-item"> Umbrella</li>
-        <li><input type="checkbox" class="check-item"> Gloves</li>
-        <li><input type="checkbox" class="check-item"> Small Bag / Backpack</li>
-        <li><input type="checkbox" class="check-item"> Power Bank</li>
-    </ul>
+        <div class="category">
+            Accessories
+        </div>
+        <ul>
+            <li><input type="checkbox" class="check-item" /> Sunglasses</li>
+            <li>
+                <input type="checkbox" class="check-item" /> Glasses / Contact Lens / Cleaner
+            </li>
+            <li><input type="checkbox" class="check-item" /> Artificial Tear</li>
+            <li><input type="checkbox" class="check-item" /> Hat / Cap</li>
+            <li><input type="checkbox" class="check-item" /> Hair Band</li>
+            <li><input type="checkbox" class="check-item" /> Watch</li>
+            <li><input type="checkbox" class="check-item" /> Belt</li>
+            <li><input type="checkbox" class="check-item" /> Boots</li>
+            <li><input type="checkbox" class="check-item" /> Sneakers</li>
+            <li><input type="checkbox" class="check-item" /> Sandals</li>
+            <li><input type="checkbox" class="check-item" /> Umbrella</li>
+            <li>
+                <input type="checkbox" class="check-item" /> Ear rings / Rings / Braclets
+            </li>
+            <li>
+                <input type="checkbox" class="check-item" /> Small Bag / Backpack
+            </li>
+            <li>
+                <input type="checkbox" class="check-item" /> Multi-purpose Cloth
+            </li>
+            <li><input type="checkbox" class="check-item" /> Wet Wipe</li>
+        </ul>
 
-    <div class="category">
-        Toiletries
-    </div>
-    <ul>
-        <li><input type="checkbox" class="check-item"> Toothbrush & Toothpaste</li>
-        <li><input type="checkbox" class="check-item"> Shampoo & Conditioner</li>
-        <li><input type="checkbox" class="check-item"> Soap / Body Wash</li>
-        <li><input type="checkbox" class="check-item"> Razor & Shaving Cream</li>
-        <li><input type="checkbox" class="check-item"> Deodorant</li>
-        <li><input type="checkbox" class="check-item"> Hairbrush / Comb</li>
-        <li><input type="checkbox" class="check-item"> Sunscreen</li>
-        <li><input type="checkbox" class="check-item"> Lip Balm</li>
-        <li><input type="checkbox" class="check-item"> Feminine Hygiene Products</li>
-    </ul>
+        <div class="category">
+            Toiletries
+        </div>
+        <ul>
+            <li>
+                <input type="checkbox" class="check-item" /> Toothbrush & Toothpaste &
+                Toothpick
+            </li>
+            <li>
+                <input type="checkbox" class="check-item" /> Shampoo & Conditioner
+            </li>
+            <li><input type="checkbox" class="check-item" /> Soap / Body Wash</li>
+            <li>
+                <input type="checkbox" class="check-item" /> Razor & Shaving Cream
+            </li>
+            <li><input type="checkbox" class="check-item" /> Sanitary Pad</li>
+            <li><input type="checkbox" class="check-item" /> Deodorant</li>
+            <li><input type="checkbox" class="check-item" /> Perfume</li>
+            <li><input type="checkbox" class="check-item" /> Sunscreen</li>
+            <li><input type="checkbox" class="check-item" /> After Sun Cream</li>
+            <li><input type="checkbox" class="check-item" /> Body Cream</li>
+            <li><input type="checkbox" class="check-item" /> Hand Cream</li>
+            <li><input type="checkbox" class="check-item" /> Hand Wash</li>
+            <li><input type="checkbox" class="check-item" /> Face Foam</li>
+            <li><input type="checkbox" class="check-item" /> Face Mask</li>
+            <li><input type="checkbox" class="check-item" /> Hairbrush / Comb</li>
+            <li><input type="checkbox" class="check-item" /> Lip Balm</li>
+            <li><input type="checkbox" class="check-item" /> Cosmetics</li>
+            <li>
+                <input type="checkbox" class="check-item" /> Nail Paint / Cleanser
+            </li>
+            <li><input type="checkbox" class="check-item" /> Cotton</li>
+            <li><input type="checkbox" class="check-item" /> Mosquito Spray</li>
+            <li><input type="checkbox" class="check-item" /> Bag Tag</li>
+            <li><input type="checkbox" class="check-item" /> Souvenir</li>
+        </ul>
 
-    <div class="category">
-        Electronics
-    </div>
-    <ul>
-        <li><input type="checkbox" class="check-item"> Phone & Charger</li>
-        <li><input type="checkbox" class="check-item"> Laptop / Tablet</li>
-        <li><input type="checkbox" class="check-item"> Headphones</li>
-        <li><input type="checkbox" class="check-item"> Travel Adapter</li>
-        <li><input type="checkbox" class="check-item"> Camera & Memory Cards</li>
-    </ul>
+        <div class="category">
+            Miscellanous
+        </div>
+        <ul>
+            <li><input type="checkbox" class="check-item" /> Sleeping Bag</li>
+            <li><input type="checkbox" class="check-item" /> Fan</li>
+            <li><input type="checkbox" class="check-item" /> Hot Pack</li>
+            <li><input type="checkbox" class="check-item" /> Coin Purse</li>
+            <li><input type="checkbox" class="check-item" /> Locks</li>
+            <li><input type="checkbox" class="check-item" /> Toth Bag</li>
+            <li><input type="checkbox" class="check-item" /> Ziplock Bag</li>
+            <li><input type="checkbox" class="check-item" /> Plastic Bag</li>
+            <li><input type="checkbox" class="check-item" /> Swiss Knife</li>
+            <li>
+                <input type="checkbox" class="check-item" /> Elephant Glue (Hot Glue)
+            </li>
+            <li><input type="checkbox" class="check-item" /> Nail Trimmer</li>
+            <li><input type="checkbox" class="check-item" /> Incents</li>
+            <li><input type="checkbox" class="check-item" /> Lighter</li>
+            <li><input type="checkbox" class="check-item" /> Torch</li>
+            <li><input type="checkbox" class="check-item" /> Water Boiler</li>
+            <li><input type="checkbox" class="check-item" /> Laundry Detergent</li>
+            <li><input type="checkbox" class="check-item" /> Water Bottle</li>
+            <li><input type="checkbox" class="check-item" /> Cutlery</li>
+            <li><input type="checkbox" class="check-item" /> Plate / Bowl</li>
+            <li><input type="checkbox" class="check-item" /> Air Pillow</li>
+            <li><input type="checkbox" class="check-item" /> Sewing Kit</li>
+            <li><input type="checkbox" class="check-item" /> Rain Coat</li>
+            <li>
+                <input type="checkbox" class="check-item" /> Feminine Hygiene Products
+            </li>
+        </ul>
 
-    <div class="category">
-        Documents & Money
-    </div>
-    <ul>
-        <li><input type="checkbox" class="check-item"> Passport</li>
-        <li><input type="checkbox" class="check-item"> Visa</li>
-        <li><input type="checkbox" class="check-item"> Flight tickets</li>
-        <li><input type="checkbox" class="check-item"> Credit / Debit cards</li>
-        <li><input type="checkbox" class="check-item"> Local currency</li>
-        <li><input type="checkbox" class="check-item"> Travel Insurance</li>
-        <li><input type="checkbox" class="check-item"> Emergency Contacts</li>
-        <li><input type="checkbox" class="check-item"> Hotel Reservations</li>
-        <li><input type="checkbox" class="check-item"> Itinerary</li>
-    </ul>
+        <div class="category">
+            First Aid Kit
+        </div>
+        <ul>
+            <li><input type="checkbox" class="check-item" /> ยาแก้ปวด ลดไข้</li>
+            <li><input type="checkbox" class="check-item" /> ยาแก้อักเสบ</li>
+            <li><input type="checkbox" class="check-item" /> ยาแก้ไอ</li>
+            <li><input type="checkbox" class="check-item" /> ยาแก้แพ้</li>
+            <li><input type="checkbox" class="check-item" /> ยาอมแก้เจ็บคอ</li>
+            <li><input type="checkbox" class="check-item" /> ยาแก้ร้อนใน</li>
+            <li>
+                <input type="checkbox" class="check-item" />
+                ยาแก้ท้องอืด/ท้องเฟ้อ/ลดกรด
+            </li>
+            <li>
+                <input type="checkbox" class="check-item" />
+                ยาแก้ท้องเสีย/ยาธาตุน้ำขาว
+            </li>
+            <li><input type="checkbox" class="check-item" /> เกลือแร่</li>
+            <li><input type="checkbox" class="check-item" /> ครีมนวดแก้ปวด</li>
+            <li><input type="checkbox" class="check-item" /> เบตาดีน</li>
+            <li><input type="checkbox" class="check-item" /> พลาสเตอร์</li>
+            <li><input type="checkbox" class="check-item" /> ยาดม/ยาหม่อง</li>
+            <li><input type="checkbox" class="check-item" /> เครื่องกรองน้ำพกพา</li>
+            <li>
+                <input type="checkbox" class="check-item" /> ยาป้ายจมูก (อากาศแห้ง)
+            </li>
+            <li>
+                <input type="checkbox" class="check-item" /> ยาแก้ปวดท้องประจำเดือน
+            </li>
+            <li><input type="checkbox" class="check-item" /> ยาส่วนตัว</li>
+        </ul>
 
-    <button onclick="saveChecklist()">Download Checklist</button>
-    <input type="file" id="importFile" accept=".json" onchange="importChecklist(event)">
-    <button onclick="clearChecklist()">Reset Checklist</button>
+        <div class="category">
+            Electronics
+        </div>
+        <ul>
+            <li><input type="checkbox" class="check-item" /> Phone & Charger</li>
+            <li><input type="checkbox" class="check-item" /> Laptop / Tablet</li>
+            <li>
+                <input type="checkbox" class="check-item" /> International Adapter
+            </li>
+            <li><input type="checkbox" class="check-item" /> Headphones</li>
+            <li><input type="checkbox" class="check-item" /> Travel Adapter</li>
+            <li><input type="checkbox" class="check-item" /> Power Bank</li>
+            <li><input type="checkbox" class="check-item" /> External Storage</li>
+            <li><input type="checkbox" class="check-item" /> Camera Stand</li>
+            <li>
+                <input type="checkbox" class="check-item" /> Camera & Memory Cards &
+                Backup Battery
+            </li>
+        </ul>
 
-    <script>
-        function autoSaveChecklist() {
-            let checkboxes = document.querySelectorAll('.check-item');
-            let checklistState = {};
+        <div class="category">
+            Documents & Money
+        </div>
+        <ul>
+            <li><input type="checkbox" class="check-item" /> Itinerary</li>
+            <li><input type="checkbox" class="check-item" /> Guidebook</li>
+            <li><input type="checkbox" class="check-item" /> Notebook & Pen</li>
+            <li><input type="checkbox" class="check-item" /> Map & Schedule</li>
+            <li><input type="checkbox" class="check-item" /> Emergency Contacts</li>
+            <li><input type="checkbox" class="check-item" /> YHA Card</li>
+            <li><input type="checkbox" class="check-item" /> Name Card</li>
+            <li><input type="checkbox" class="check-item" /> Student Card</li>
+            <li><input type="checkbox" class="check-item" /> Books</li>
+        </ul>
 
-            checkboxes.forEach((checkbox, index) => {
-                checklistState[index] = checkbox.checked;
-            });
+        <div class="category">
+            Very Important
+        </div>
+        <ul>
+            <li><input type="checkbox" class="check-item" /> Passport</li>
+            <li><input type="checkbox" class="check-item" /> Visa</li>
+            <li><input type="checkbox" class="check-item" /> ID Card</li>
+            <li><input type="checkbox" class="check-item" /> Cash</li>
+            <li>
+                <input type="checkbox" class="check-item" /> Credit / Debit cards
+            </li>
+            <li><input type="checkbox" class="check-item" /> International Driving License</li>
+            <li><input type="checkbox" class="check-item" /> Flight tickets</li>
+            <li><input type="checkbox" class="check-item" /> Train tickets</li>
+            <li><input type="checkbox" class="check-item" /> Hotel Reservations</li>
+            <li><input type="checkbox" class="check-item" /> Invitation Letter</li>
+            <li><input type="checkbox" class="check-item" /> SIM Card / Roaming</li>
+            <li><input type="checkbox" class="check-item" /> Travel Insurance</li>
+        </ul>
 
-            localStorage.setItem("travelChecklist", JSON.stringify(checklistState));
-        }
+        <div class="category">
+            Before Leaving
+        </div>
+        <ul>
+            <li><input type="checkbox" class="check-item" /> Pay Water Bills</li>
+            <li><input type="checkbox" class="check-item" /> Pay Electric Bills</li>
+            <li><input type="checkbox" class="check-item" /> Pay Phone Bills</li>
+            <li><input type="checkbox" class="check-item" /> Pay Internet Bills</li>
+            <li><input type="checkbox" class="check-item" /> Pay Credit Card Bills</li>
+            <li><input type="checkbox" class="check-item" /> Turn off Electricity</li>
+            <li><input type="checkbox" class="check-item" /> Turn off Water</li>
+            <li><input type="checkbox" class="check-item" /> Turn off Air Con</li>
+            <li><input type="checkbox" class="check-item" /> Lock the doors</li>
+            <li><input type="checkbox" class="check-item" /> Safely store the keys</li>
+        </ul>
+    </section>
 
-        function loadChecklist() {
-            let checklistState = localStorage.getItem("travelChecklist");
-            if (!checklistState) return;
+    <section id="bottomline">
+        <div class="container-fluid" style="font-family: 'Comfortaa', cursive; font-size: large; padding: 40px 40px 40px 40px;">
+            <div class="row">
+                <div class="col" style="text-align: center;">
+                    <center>
+                        That's it. You are ready.<BR>Have a wonderful journey!
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            checklistState = JSON.parse(checklistState);
-            let checkboxes = document.querySelectorAll('.check-item');
+        <section id="checklistBody" style="margin-bottom: 40px; background-color: #f1f1f1;">
+            <div class="category-2">
+                Time for a new trip!
+            </div>
+            <button onclick="clearChecklist()">Reset the Checklist</button>
+        </section>
+        <section id="checklistBody" style="margin-bottom: 40px; background-color: #f1f1f1;">
+            <div class="category-2">
+                Import/Export
+            </div>
+            <div class="container-fluid">
+                <div class="row" style="padding-top: 10px">
+                    The checklist is already auto-saved to your local browser storage. Use this only when you need to work on another device.
+                </div>
+                <div class="row" style="padding-top: 10px">
+                    <div class="col-6">
+                        <b>Export as JSON</b>
+                    </div>
+                    <div class="col-6">
+                        <b>Import from JSON</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <button onclick="saveChecklist()">Download Checklist</button>
+                    </div>
+                    <div class="col-6">
+                        <input type="file" id="importFile" accept=".json" onchange="importChecklist(event)" />
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            checkboxes.forEach((checkbox, index) => {
-                checkbox.checked = checklistState[index] || false;
-            });
-        }
 
-        function saveChecklist() {
-            let checkboxes = document.querySelectorAll('.check-item');
-            let checklistState = {};
+        <script>
+            function autoSaveChecklist() {
+                let checkboxes = document.querySelectorAll(".check-item");
+                let checklistState = {};
 
-            checkboxes.forEach((checkbox, index) => {
-                checklistState[index] = checkbox.checked;
-            });
-
-            let jsonData = JSON.stringify(checklistState, null, 2);
-            let blob = new Blob([jsonData], {
-                type: "application/json"
-            });
-            let url = URL.createObjectURL(blob);
-
-            let a = document.createElement("a");
-            a.href = url;
-            a.download = "travel_checklist.json";
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-
-        function importChecklist(event) {
-            let file = event.target.files[0];
-            if (!file) return;
-
-            let reader = new FileReader();
-            reader.onload = function(e) {
-                let jsonData = e.target.result;
-                let checklistState = JSON.parse(jsonData);
-
-                let checkboxes = document.querySelectorAll('.check-item');
                 checkboxes.forEach((checkbox, index) => {
-                    checkbox.checked = checklistState[index] || false;
+                    checklistState[index] = checkbox.checked;
                 });
 
                 localStorage.setItem("travelChecklist", JSON.stringify(checklistState));
-            };
-            reader.readAsText(file);
-        }
+            }
 
-        function clearChecklist() {
-            document.querySelectorAll('.check-item').forEach(checkbox => checkbox.checked = false);
-            localStorage.removeItem("travelChecklist");
-        }
+            function loadChecklist() {
+                let checklistState = localStorage.getItem("travelChecklist");
+                if (!checklistState) return;
 
-        document.addEventListener("DOMContentLoaded", () => {
-            loadChecklist();
-            document.querySelectorAll('.check-item').forEach(checkbox => checkbox.addEventListener("change", autoSaveChecklist));
-        });
-    </script>
+                checklistState = JSON.parse(checklistState);
+                let checkboxes = document.querySelectorAll(".check-item");
 
-</body>
+                checkboxes.forEach((checkbox, index) => {
+                    checkbox.checked = checklistState[index] || false;
+                });
+            }
+
+            function saveChecklist() {
+                let checkboxes = document.querySelectorAll(".check-item");
+                let checklistState = {};
+
+                checkboxes.forEach((checkbox, index) => {
+                    checklistState[index] = checkbox.checked;
+                });
+
+                let jsonData = JSON.stringify(checklistState, null, 2);
+                let blob = new Blob([jsonData], {
+                    type: "application/json",
+                });
+                let url = URL.createObjectURL(blob);
+
+                let a = document.createElement("a");
+                a.href = url;
+                a.download = "travel_checklist.json";
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+
+            function importChecklist(event) {
+                let file = event.target.files[0];
+                if (!file) return;
+
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    let jsonData = e.target.result;
+                    let checklistState = JSON.parse(jsonData);
+
+                    let checkboxes = document.querySelectorAll(".check-item");
+                    checkboxes.forEach((checkbox, index) => {
+                        checkbox.checked = checklistState[index] || false;
+                    });
+
+                    localStorage.setItem(
+                        "travelChecklist",
+                        JSON.stringify(checklistState)
+                    );
+                };
+                reader.readAsText(file);
+            }
+
+            function clearChecklist() {
+                document
+                .querySelectorAll(".check-item")
+                .forEach((checkbox) => (checkbox.checked = false));
+                localStorage.removeItem("travelChecklist");
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                loadChecklist();
+                document
+                .querySelectorAll(".check-item")
+                .forEach((checkbox) =>
+                    checkbox.addEventListener("change", autoSaveChecklist)
+                );
+            });
+        </script>
+        <!-- jQuery and Tether first, then Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+        <script src="assets/lib/js/bootstrap.min.js"></script>
+        <script src="assets/lib/js/jquery.paroller.js"></script>
+        <script>
+            $(function () {
+                $(window).paroller();
+            });
+        </script>
+    </body>
+
+    <footer id="footer1">
+        Handcrafted by Tanit K. &nbsp; | &nbsp; © Copyright <script>
+            var dt = new Date(); document.write(dt.getFullYear());
+        </script>
+        . All Rights Reserved.
+    </footer>
+
 </html>
